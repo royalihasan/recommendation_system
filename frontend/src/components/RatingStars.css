@@ -1,0 +1,22 @@
+.rating-stars {
+  display: inline-flex;
+  gap: 2px;
+}
+
+.star {
+  font-size: 1.2rem;
+  color: #ffd700;
+  transition: all 0.2s;
+}
+
+.star.empty {
+  color: #d1d5db;
+}
+
+.rating-stars.interactive .star {
+  cursor: pointer;
+}
+
+.rating-stars.interactive .star:hover {
+  transform: scale(1.2);
+}

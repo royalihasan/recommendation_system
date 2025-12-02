@@ -1,0 +1,372 @@
+.about-page {
+    background: #0f0f0f;
+    color: #e5e5e5;
+    min-height: 100vh;
+}
+
+.about-hero {
+    background: linear-gradient(to bottom, rgba(229, 9, 20, 0.1), #0f0f0f);
+    padding: 4rem 2rem 3rem;
+    text-align: center;
+    border-bottom: 2px solid rgba(229, 9, 20, 0.3);
+}
+
+.about-hero h1 {
+    font-size: 3rem;
+    margin: 0 0 1rem 0;
+    color: #e50914;
+}
+
+.subtitle {
+    font-size: 1.25rem;
+    color: #999;
+    margin: 0;
+}
+
+.section {
+    padding: 4rem 2rem;
+}
+
+.dark-section {
+    background: #141414;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.section-title {
+    font-size: 2rem;
+    color: #e5e5e5;
+    margin: 0 0 2rem 0;
+    text-align: center;
+}
+
+/* Overview Grid */
+.overview-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 2rem;
+    margin-top: 2rem;
+}
+
+.feature-card {
+    background: #1a1a1a;
+    padding: 2rem;
+    border-radius: 8px;
+    text-align: center;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    transition: all 0.3s;
+}
+
+.feature-card:hover {
+    border-color: #e50914;
+    transform: translateY(-4px);
+}
+
+.feature-icon {
+    font-size: 3rem;
+    margin-bottom: 1rem;
+}
+
+.feature-card h3 {
+    color: #e5e5e5;
+    margin: 0 0 0.75rem 0;
+}
+
+.feature-card p {
+    color: #999;
+    margin: 0;
+    line-height: 1.6;
+}
+
+/* Architecture Diagram */
+.architecture-diagram {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.5rem;
+    margin: 2rem 0;
+}
+
+.arch-layer {
+    width: 100%;
+    max-width: 400px;
+    display: flex;
+    justify-content: center;
+}
+
+.arch-box {
+    background: #1a1a1a;
+    padding: 1.5rem 2rem;
+    border-radius: 8px;
+    text-align: center;
+    width: 100%;
+    border: 2px solid;
+}
+
+.arch-box.frontend {
+    border-color: #61dafb;
+}
+
+.arch-box.backend {
+    border-color: #009688;
+}
+
+.arch-box.ml {
+    border-color: #e50914;
+}
+
+.arch-box.data {
+    border-color: #ffc107;
+}
+
+.arch-box h4 {
+    color: #e5e5e5;
+    margin: 0 0 0.5rem 0;
+    font-size: 1.25rem;
+}
+
+.arch-box p {
+    color: #999;
+    margin: 0.25rem 0;
+    font-size: 0.9rem;
+}
+
+.arch-arrow {
+    font-size: 2rem;
+    color: #e50914;
+    margin: 0.5rem 0;
+}
+
+/* SVD Explanation */
+.svd-explanation {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+    gap: 1.5rem;
+    margin: 2rem 0;
+}
+
+.step-card {
+    background: #1a1a1a;
+    padding: 1.5rem;
+    border-radius: 8px;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    position: relative;
+}
+
+.step-number {
+    position: absolute;
+    top: -15px;
+    left: 20px;
+    background: #e50914;
+    color: white;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 700;
+    font-size: 1.25rem;
+}
+
+.step-card h3 {
+    color: #e5e5e5;
+    margin: 1rem 0 0.5rem 0;
+}
+
+.step-card p {
+    color: #999;
+    margin: 0 0 1rem 0;
+    line-height: 1.5;
+}
+
+.code-snippet {
+    background: #000;
+    padding: 0.75rem;
+    border-radius: 4px;
+    font-family: 'Courier New', monospace;
+    font-size: 0.85rem;
+    color: #61dafb;
+    border: 1px solid rgba(97, 218, 251, 0.3);
+}
+
+/* Flow Diagram */
+.flow-diagram {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 1rem;
+    margin: 2rem 0;
+}
+
+.flow-step {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+.flow-box {
+    background: #1a1a1a;
+    padding: 1rem 1.5rem;
+    border-radius: 8px;
+    border: 1px solid #e50914;
+    color: #e5e5e5;
+    min-width: 150px;
+    text-align: center;
+    font-weight: 500;
+}
+
+.flow-arrow {
+    color: #e50914;
+    font-size: 1.5rem;
+    font-weight: 700;
+}
+
+/* Tech Grid */
+.tech-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 2rem;
+    margin: 2rem 0;
+}
+
+.tech-category {
+    background: #1a1a1a;
+    padding: 1.5rem;
+    border-radius: 8px;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.tech-category h3 {
+    color: #e50914;
+    margin: 0 0 1rem 0;
+    font-size: 1.25rem;
+}
+
+.tech-category ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.tech-category li {
+    color: #e5e5e5;
+    padding: 0.5rem 0;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.tech-category li:last-child {
+    border-bottom: none;
+}
+
+/* Metrics */
+.metrics-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 2rem;
+    margin: 2rem 0;
+}
+
+.metric-card {
+    background: #1a1a1a;
+    padding: 2rem;
+    border-radius: 8px;
+    text-align: center;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.metric-value {
+    font-size: 3rem;
+    font-weight: 700;
+    color: #e50914;
+    margin: 0 0 0.5rem 0;
+}
+
+.metric-label {
+    font-size: 1.25rem;
+    color: #e5e5e5;
+    margin: 0 0 0.5rem 0;
+    font-weight: 600;
+}
+
+.metric-card p {
+    color: #999;
+    margin: 0;
+    font-size: 0.9rem;
+}
+
+/* Dataset Info */
+.dataset-info {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    gap: 2rem;
+    margin: 2rem 0 3rem;
+}
+
+.dataset-stat {
+    text-align: center;
+}
+
+.dataset-stat h3 {
+    font-size: 2.5rem;
+    color: #e50914;
+    margin: 0 0 0.5rem 0;
+}
+
+.dataset-stat p {
+    color: #e5e5e5;
+    margin: 0;
+    font-size: 1.1rem;
+}
+
+.dataset-source {
+    background: #1a1a1a;
+    padding: 1.5rem;
+    border-radius: 8px;
+    border-left: 4px solid #e50914;
+}
+
+.dataset-source p {
+    color: #e5e5e5;
+    margin: 0.5rem 0;
+}
+
+.dataset-source strong {
+    color: #e50914;
+}
+
+/* Footer */
+.about-footer {
+    background: #141414;
+    padding: 2rem;
+    text-align: center;
+    border-top: 2px solid rgba(229, 9, 20, 0.3);
+}
+
+.about-footer p {
+    color: #999;
+    margin: 0.5rem 0;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .about-hero h1 {
+        font-size: 2rem;
+    }
+
+    .section {
+        padding: 2rem 1rem;
+    }
+
+    .flow-diagram {
+        flex-direction: column;
+    }
+
+    .flow-arrow {
+        transform: rotate(90deg);
+    }
+}

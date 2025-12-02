@@ -1,0 +1,287 @@
+.home-page {
+    min-height: 100vh;
+    background: var(--bg-primary);
+}
+
+.hero-section {
+    background: linear-gradient(to bottom, rgba(229, 9, 20, 0.1), var(--bg-primary));
+    padding: 3rem 2rem 2rem;
+    margin-bottom: 1rem;
+}
+
+.hero-content {
+    max-width: 800px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.hero-title {
+    font-size: 3.5rem;
+    font-weight: 700;
+    margin: 0 0 1rem 0;
+    color: var(--accent-color);
+    letter-spacing: -1px;
+}
+
+.hero-subtitle {
+    font-size: 1.25rem;
+    margin: 0 0 2rem 0;
+    color: var(--text-primary);
+    font-weight: 400;
+    line-height: 1.5;
+}
+
+.hero-cta {
+    display: flex;
+    gap: 1rem;
+    justify-content: center;
+}
+
+.cta-button,
+.cta-button-outline {
+    padding: 0.75rem 2rem;
+    border-radius: 4px;
+    font-weight: 600;
+    text-decoration: none;
+    transition: all 0.2s;
+    font-size: 1rem;
+}
+
+.cta-button {
+    background: var(--accent-color);
+    color: white;
+    border: none;
+}
+
+.cta-button:hover {
+    background: var(--accent-hover);
+}
+
+.cta-button-outline {
+    background: transparent;
+    color: var(--text-primary);
+    border: 1px solid rgba(255, 255, 255, 0.5);
+}
+
+.cta-button-outline:hover {
+    border-color: var(--text-primary);
+    background: var(--glass-bg);
+}
+
+.how-it-works {
+    max-width: 700px;
+    margin: 2.5rem auto 0;
+    padding: 1.5rem;
+    background: rgba(229, 9, 20, 0.1);
+    border-radius: 8px;
+    border: 1px solid rgba(229, 9, 20, 0.3);
+    text-align: center;
+}
+
+.how-it-works h3 {
+    color: var(--accent-color);
+    margin: 0 0 0.75rem 0;
+    font-size: 1.25rem;
+}
+
+.how-it-works p {
+    color: var(--text-primary);
+    margin: 0;
+    line-height: 1.6;
+}
+
+.how-it-works strong {
+    color: #fff;
+}
+
+.learn-more-link {
+    color: var(--accent-color);
+    text-decoration: none;
+    font-weight: 600;
+    transition: color 0.2s;
+}
+
+.learn-more-link:hover {
+    color: var(--accent-hover);
+}
+
+/* Search Container */
+.search-container {
+    max-width: 600px;
+    margin: 2rem auto 0;
+    position: relative;
+}
+
+.search-wrapper {
+    position: relative;
+    width: 100%;
+}
+
+.search-icon {
+    position: absolute;
+    left: 1.5rem;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 1.2rem;
+    color: var(--text-secondary);
+    pointer-events: none;
+    z-index: 1;
+}
+
+.search-input {
+    width: 100%;
+    padding: 1.2rem 3rem 1.2rem 3.5rem;
+    font-size: 1.1rem;
+    background: var(--bg-secondary);
+    border: 2px solid var(--border-color);
+    border-radius: 50px;
+    color: var(--text-primary);
+    outline: none;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.search-input::placeholder {
+    color: var(--text-secondary);
+}
+
+.search-input:focus {
+    background: var(--bg-secondary);
+    border-color: var(--accent-color);
+    box-shadow: 0 0 0 4px rgba(229, 9, 20, 0.2);
+}
+
+.search-clear-btn {
+    position: absolute;
+    right: 1.5rem;
+    top: 50%;
+    transform: translateY(-50%);
+    background: none;
+    border: none;
+    color: var(--text-secondary);
+    font-size: 1.2rem;
+    cursor: pointer;
+    padding: 0.25rem;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.2s;
+}
+
+.search-clear-btn:hover {
+    color: var(--text-primary);
+    background: rgba(255, 255, 255, 0.1);
+}
+
+.home-content {
+    padding: 2rem 0 3rem;
+}
+
+.section-header {
+    text-align: center;
+    margin: 0 0 1rem 0;
+    padding: 0 2rem;
+}
+
+.section-header h2 {
+    font-size: 1.75rem;
+    margin: 0;
+    color: var(--text-primary);
+}
+
+.recommendations-header {
+    text-align: center;
+    margin: 0 0 1rem 0;
+    padding: 0 2rem;
+    position: relative;
+}
+
+.recommendations-header h2 {
+    font-size: 2rem;
+    margin: 0 0 0.5rem 0;
+    color: var(--accent-color);
+}
+
+.recommendations-header p {
+    color: var(--text-secondary);
+    margin: 0 0 0.5rem 0;
+    font-size: 1rem;
+}
+
+.view-all-link {
+    color: var(--accent-color);
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 0.95rem;
+    transition: color 0.2s;
+}
+
+.view-all-link:hover {
+    color: var(--accent-hover);
+}
+
+.genre-section-header {
+    text-align: center;
+    margin: 3rem 0 1.5rem 0;
+    padding: 0 2rem;
+}
+
+.genre-section-header h2 {
+    font-size: 1.75rem;
+    margin: 0;
+    color: var(--text-primary);
+}
+
+.load-more-section {
+    text-align: center;
+    margin: 3rem 0 2rem;
+}
+
+.load-more-button {
+    display: inline-block;
+    padding: 0.875rem 2.5rem;
+    background: transparent;
+    color: var(--text-primary);
+    border: 2px solid var(--border-color);
+    border-radius: 4px;
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 1rem;
+    transition: all 0.3s;
+}
+
+.load-more-button:hover {
+    background: rgba(229, 9, 20, 0.1);
+    border-color: var(--accent-color);
+    color: #fff;
+}
+
+@media (max-width: 768px) {
+    .hero-title {
+        font-size: 2.5rem;
+    }
+
+    .hero-subtitle {
+        font-size: 1.1rem;
+    }
+
+    .hero-cta {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .cta-button,
+    .cta-button-outline {
+        width: 200px;
+    }
+
+    .recommendations-header h2 {
+        font-size: 1.5rem;
+    }
+
+    .search-input {
+        font-size: 0.95rem;
+        padding: 0.875rem 1.25rem;
+    }
+}
