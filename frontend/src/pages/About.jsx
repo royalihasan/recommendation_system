@@ -1162,8 +1162,27 @@ const About = () => {
                     </div>
 
                     <div className="project-links">
-                        <p>🔗 GitHub Repository</p>
+                        <p>
+                            <a 
+                                href="https://github.com/royalihasan/recommendation_system" 
+                                target="_blank" 
+                                rel="noopener noreferrer"
+                                className="github-link"
+                            >
+                                🔗 GitHub Repository
+                            </a>
+                        </p>
                         <p>📧 University Demo Project 2025</p>
+                        <p style={{fontSize: '0.9rem', marginTop: '1rem'}}>
+                            <a 
+                                href="https://github.com/royalihasan" 
+                                target="_blank" 
+                                rel="noopener noreferrer"
+                                className="profile-link"
+                            >
+                                @royalihasan
+                            </a>
+                        </p>
                     </div>
                 </div>
             )
