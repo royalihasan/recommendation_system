@@ -1003,6 +1003,39 @@
     font-size: 1.1rem;
 }
 
+.github-link,
+.profile-link {
+    color: #e50914;
+    text-decoration: none;
+    font-weight: 600;
+    transition: all 0.3s ease;
+    position: relative;
+    display: inline-block;
+}
+
+.github-link::after,
+.profile-link::after {
+    content: '';
+    position: absolute;
+    bottom: -2px;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background: linear-gradient(to right, #e50914, #ff4d4d);
+    transition: width 0.3s ease;
+}
+
+.github-link:hover,
+.profile-link:hover {
+    color: #ff4d4d;
+    transform: translateY(-2px);
+}
+
+.github-link:hover::after,
+.profile-link:hover::after {
+    width: 100%;
+}
+
 /* Navigation Controls */
 .slide-controls {
     position: fixed;
