@@ -1,85 +1,161 @@
-/* Search Container */
-.search-container {
-    max-width: 600px;
+/* Netflix-Style Search Container */
+.netflix-search-container {
+    max-width: 700px;
     margin: 2rem auto 0;
     position: relative;
+    padding: 0 1rem;
 }
 
-.search-wrapper {
+.netflix-search-wrapper {
     position: relative;
     width: 100%;
-}
-
-.search-icon {
-    position: absolute;
-    left: 1.5rem;
-    top: 50%;
-    transform: translateY(-50%);
-    width: 1.2rem;
-    height: 1.2rem;
-    pointer-events: none;
-    z-index: 1;
-}
-
-.search-input {
-    width: 100%;
-    padding: 1.2rem 3rem 1.2rem 3.5rem;
-    font-size: 1.1rem;
-    background: var(--bg-secondary);
-    border: 2px solid var(--border-color);
-    border-radius: 50px;
-    color: var(--text-primary);
-    outline: none;
+    background: rgba(0, 0, 0, 0.75);
+    border: 2px solid rgba(255, 255, 255, 0.15);
+    border-radius: 4px;
+    display: flex;
+    align-items: center;
     transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    backdrop-filter: blur(10px);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
 }
 
-.search-input::placeholder {
-    color: var(--text-secondary);
+.netflix-search-wrapper:hover {
+    border-color: rgba(255, 255, 255, 0.25);
+    background: rgba(0, 0, 0, 0.85);
 }
 
-.search-input:focus {
-    background: var(--bg-secondary);
-    border-color: var(--accent-color);
-    box-shadow: 0 0 0 4px rgba(229, 9, 20, 0.2);
+.netflix-search-wrapper.active {
+    border-color: rgba(255, 255, 255, 0.5);
+    background: rgba(0, 0, 0, 0.9);
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.5);
+    transform: translateY(-2px);
 }
 
-.search-clear-btn {
-    position: absolute;
-    right: 1.5rem;
-    top: 50%;
-    transform: translateY(-50%);
-    background: none;
-    border: none;
-    color: var(--text-secondary);
-    font-size: 1.2rem;
-    cursor: pointer;
-    padding: 0.25rem;
-    border-radius: 50%;
+.search-icon-wrapper {
+    padding: 0 1.25rem;
     display: flex;
     align-items: center;
     justify-content: center;
-    transition: all 0.2s;
 }
 
-.search-clear-btn:hover {
-    color: var(--text-primary);
-    background: rgba(255, 255, 255, 0.1);
+.search-icon {
+    width: 24px;
+    height: 24px;
+    color: rgba(255, 255, 255, 0.7);
+    transition: color 0.3s ease;
 }
 
+.netflix-search-wrapper.active .search-icon {
+    color: #e50914;
+}
+
+.netflix-search-input {
+    flex: 1;
+    padding: 1.25rem 1rem;
+    font-size: 1.125rem;
+    background: transparent;
+    border: none;
+    color: #fff;
+    outline: none;
+    font-weight: 400;
+    letter-spacing: 0.3px;
+}
+
+.netflix-search-input::placeholder {
+    color: rgba(255, 255, 255, 0.5);
+    font-weight: 400;
+}
+
+.netflix-clear-btn {
+    padding: 0.5rem 1.25rem;
+    background: none;
+    border: none;
+    color: rgba(255, 255, 255, 0.6);
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.2s ease;
+}
+
+.netflix-clear-btn svg {
+    width: 20px;
+    height: 20px;
+}
+
+.netflix-clear-btn:hover {
+    color: #fff;
+    transform: scale(1.1);
+}
+
+.netflix-clear-btn:active {
+    transform: scale(0.95);
+}
+
+.search-hint {
+    margin-top: 0.75rem;
+    padding: 0.75rem 1rem;
+    background: rgba(229, 9, 20, 0.1);
+    border: 1px solid rgba(229, 9, 20, 0.3);
+    border-radius: 4px;
+    color: rgba(255, 255, 255, 0.7);
+    font-size: 0.9rem;
+    text-align: center;
+    animation: fadeIn 0.3s ease;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(-10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Responsive Design */
 @media (max-width: 768px) {
-    .search-input {
-        font-size: 0.95rem;
-        padding: 0.875rem 1.25rem 0.875rem 2.5rem;
+    .netflix-search-container {
+        padding: 0 0.5rem;
+    }
+
+    .netflix-search-input {
+        font-size: 1rem;
+        padding: 1rem 0.75rem;
+    }
+
+    .search-icon-wrapper {
+        padding: 0 1rem;
     }
 
     .search-icon {
-        left: 1rem;
-        width: 1rem;
-        height: 1rem;
+        width: 20px;
+        height: 20px;
     }
 
-    .search-clear-btn {
-        right: 1rem;
+    .netflix-clear-btn {
+        padding: 0.5rem 1rem;
+    }
+
+    .netflix-clear-btn svg {
+        width: 18px;
+        height: 18px;
+    }
+
+    .search-hint {
+        font-size: 0.85rem;
+        padding: 0.5rem 0.75rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .netflix-search-input {
+        font-size: 0.95rem;
+    }
+
+    .search-hint {
+        font-size: 0.8rem;
     }
 }

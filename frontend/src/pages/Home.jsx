@@ -99,10 +99,14 @@ const Home = () => {
     return (
         <div className="home-page">
             <div className="hero-section">
+                <div className="hero-content">
+                    <h1 className="hero-title">Discover Your Next Favorite Movie</h1>
+                    <p className="hero-subtitle">Personalized recommendations powered by AI</p>
+                </div>
                 <SearchBar
                     value={searchQuery}
                     onChange={setSearchQuery}
-                    placeholder="Search for movies, genres, or actors..."
+                    placeholder="Search thousands of movies..."
                 />
             </div>
 

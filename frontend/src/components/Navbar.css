@@ -1,91 +1,339 @@
-.navbar {
-    background: #141414;
-    padding: 1rem 2rem;
-    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.5);
-    position: sticky;
+/* Netflix-Style Navbar */
+.netflix-navbar {
+    position: fixed;
     top: 0;
-    z-index: 100;
+    left: 0;
+    right: 0;
+    z-index: 1000;
+    padding: 1.25rem 3rem;
+    background: linear-gradient(
+        to bottom,
+        rgba(0, 0, 0, 0.9) 10%,
+        rgba(0, 0, 0, 0.7) 50%,
+        transparent 100%
+    );
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.netflix-navbar.scrolled {
+    background: rgba(20, 20, 20, 0.95);
+    backdrop-filter: blur(10px);
+    box-shadow: 0 2px 20px rgba(0, 0, 0, 0.5);
+    padding: 1rem 3rem;
 }
 
 .navbar-container {
-    max-width: 1400px;
+    max-width: 1800px;
     margin: 0 auto;
     display: flex;
     justify-content: space-between;
     align-items: center;
-}
-
-.navbar-brand {
-    font-size: 1.75rem;
-    font-weight: 700;
-    color: #e50914;
-    text-decoration: none;
-    transition: opacity 0.2s;
-}
-
-.navbar-brand:hover {
-    opacity: 0.8;
-}
-
-.navbar-links {
-    display: flex;
     gap: 2rem;
+}
+
+/* Logo */
+.navbar-logo {
+    display: flex;
     align-items: center;
+    gap: 0.75rem;
+    text-decoration: none;
+    transition: all 0.3s ease;
+    position: relative;
+    z-index: 10;
+}
+
+.navbar-logo:hover {
+    transform: scale(1.05);
+}
+
+.logo-icon {
+    width: 40px;
+    height: 40px;
+    color: #e50914;
+    transition: all 0.3s ease;
+}
+
+.navbar-logo:hover .logo-icon {
+    filter: drop-shadow(0 0 8px rgba(229, 9, 20, 0.8));
+}
+
+.logo-text {
+    font-size: 1.75rem;
+    font-weight: 800;
+    background: linear-gradient(135deg, #e50914 0%, #ff4757 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    letter-spacing: -0.5px;
+}
+
+/* Navigation Menu */
+.navbar-menu {
+    display: flex;
+    align-items: center;
+    gap: 2.5rem;
     list-style: none;
     margin: 0;
     padding: 0;
+    flex: 1;
 }
 
-.navbar-links a {
-    color: #e5e5e5;
+.navbar-menu li {
+    position: relative;
+}
+
+.navbar-menu a {
+    color: rgba(255, 255, 255, 0.85);
     text-decoration: none;
     font-weight: 500;
-    transition: color 0.2s;
-    font-size: 0.95rem;
+    font-size: 1rem;
+    transition: all 0.3s ease;
+    position: relative;
+    padding: 0.5rem 0;
+    display: block;
 }
 
-.navbar-links a:hover {
+.navbar-menu a::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background: #e50914;
+    transition: width 0.3s ease;
+}
+
+.navbar-menu a:hover {
     color: #fff;
 }
 
-.user-info {
+.navbar-menu a:hover::after {
+    width: 100%;
+}
+
+.navbar-menu a.active {
+    color: #fff;
+    font-weight: 600;
+}
+
+.navbar-menu a.active::after {
+    width: 100%;
+}
+
+/* User Actions */
+.navbar-actions {
     display: flex;
     align-items: center;
-    gap: 1rem;
+    gap: 1.5rem;
+}
+
+.user-profile {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    padding: 0.5rem 1rem;
+    border-radius: 25px;
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    transition: all 0.3s ease;
+}
+
+.user-profile:hover {
+    background: rgba(255, 255, 255, 0.1);
+    border-color: rgba(255, 255, 255, 0.2);
+}
+
+.user-avatar {
+    width: 36px;
+    height: 36px;
+    border-radius: 50%;
+    background: linear-gradient(135deg, #e50914 0%, #ff4757 100%);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #fff;
+    font-weight: 700;
+    font-size: 1rem;
+    box-shadow: 0 2px 8px rgba(229, 9, 20, 0.3);
 }
 
 .user-name {
-    color: #e5e5e5;
+    color: #fff;
     font-size: 0.95rem;
-}
-
-.logout-button {
-    background: #e50914;
-    color: white;
-    border: none;
-    padding: 0.5rem 1.25rem;
-    border-radius: 4px;
-    cursor: pointer;
     font-weight: 500;
-    transition: background 0.2s;
-    font-size: 0.9rem;
 }
 
-.logout-button:hover {
+.btn-logout,
+.btn-signin {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.625rem 1.5rem;
+    border: none;
+    border-radius: 4px;
+    font-weight: 600;
+    font-size: 0.95rem;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    text-decoration: none;
+    background: #e50914;
+    color: #fff;
+}
+
+.btn-logout svg {
+    width: 18px;
+    height: 18px;
+}
+
+.btn-logout:hover,
+.btn-signin:hover {
     background: #f40612;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(229, 9, 20, 0.4);
+}
+
+.btn-logout:active,
+.btn-signin:active {
+    transform: translateY(0);
+}
+
+/* Mobile Menu Toggle */
+.mobile-menu-toggle {
+    display: none;
+    flex-direction: column;
+    gap: 5px;
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 0.5rem;
+    z-index: 1001;
+}
+
+.mobile-menu-toggle span {
+    width: 25px;
+    height: 3px;
+    background: #fff;
+    border-radius: 3px;
+    transition: all 0.3s ease;
+}
+
+/* Responsive Design */
+@media (max-width: 1024px) {
+    .netflix-navbar {
+        padding: 1rem 2rem;
+    }
+
+    .netflix-navbar.scrolled {
+        padding: 0.875rem 2rem;
+    }
+
+    .navbar-menu {
+        gap: 1.5rem;
+    }
+
+    .user-name {
+        display: none;
+    }
 }
 
 @media (max-width: 768px) {
-    .navbar {
-        padding: 1rem;
+    .netflix-navbar {
+        padding: 1rem 1.5rem;
     }
 
-    .navbar-links {
-        gap: 1rem;
-        font-size: 0.85rem;
+    .netflix-navbar.scrolled {
+        padding: 0.875rem 1.5rem;
     }
 
-    .navbar-brand {
+    .logo-text {
         font-size: 1.5rem;
+    }
+
+    .logo-icon {
+        width: 32px;
+        height: 32px;
+    }
+
+    .navbar-menu {
+        position: fixed;
+        top: 0;
+        right: -100%;
+        width: 280px;
+        height: 100vh;
+        background: rgba(20, 20, 20, 0.98);
+        backdrop-filter: blur(20px);
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 0;
+        padding: 5rem 2rem 2rem;
+        transition: right 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+        box-shadow: -5px 0 30px rgba(0, 0, 0, 0.5);
+    }
+
+    .navbar-menu.open {
+        right: 0;
+    }
+
+    .navbar-menu li {
+        width: 100%;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    }
+
+    .navbar-menu a {
+        padding: 1.25rem 0;
+        font-size: 1.125rem;
+        width: 100%;
+    }
+
+    .navbar-actions {
+        gap: 0.75rem;
+    }
+
+    .user-profile {
+        padding: 0.5rem;
+    }
+
+    .btn-logout,
+    .btn-signin {
+        padding: 0.5rem 1rem;
+        font-size: 0.875rem;
+    }
+
+    .btn-logout svg {
+        display: none;
+    }
+
+    .mobile-menu-toggle {
+        display: flex;
+    }
+
+    .navbar-menu.open ~ .mobile-menu-toggle span:nth-child(1) {
+        transform: rotate(45deg) translate(7px, 7px);
+    }
+
+    .navbar-menu.open ~ .mobile-menu-toggle span:nth-child(2) {
+        opacity: 0;
+    }
+
+    .navbar-menu.open ~ .mobile-menu-toggle span:nth-child(3) {
+        transform: rotate(-45deg) translate(7px, -7px);
+    }
+}
+
+@media (max-width: 480px) {
+    .logo-text {
+        font-size: 1.25rem;
+    }
+
+    .logo-icon {
+        width: 28px;
+        height: 28px;
+    }
+
+    .btn-logout,
+    .btn-signin {
+        padding: 0.5rem 0.875rem;
+        font-size: 0.8rem;
     }
 }

@@ -1,22 +1,32 @@
 .movies-page {
     min-height: calc(100vh - 80px);
     padding: 2rem 0;
+    background: var(--bg-primary);
 }
 
 .movies-header {
     text-align: center;
     margin-bottom: 2rem;
+    padding: 0 2rem;
 }
 
 .movies-header h1 {
-    font-size: 2.5rem;
-    margin: 0 0 0.5rem 0;
-    color: #1f2937;
+    font-size: 3rem;
+    font-weight: 800;
+    margin: 0 0 1rem 0;
+    background: linear-gradient(135deg, #fff 0%, #e50914 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    letter-spacing: -1px;
 }
 
 .movies-header p {
-    color: #6b7280;
+    color: rgba(255, 255, 255, 0.7);
     margin: 0;
+    font-size: 1.2rem;
+    font-weight: 500;
+    letter-spacing: 0.5px;
 }
 
 .movies-search-container {
@@ -67,30 +77,38 @@
     align-items: center;
     gap: 1.5rem;
     margin-top: 3rem;
+    padding-bottom: 2rem;
 }
 
 .pagination-button {
-    padding: 0.75rem 1.5rem;
-    background: white;
-    border: 2px solid #e5e7eb;
-    border-radius: 8px;
+    padding: 0.875rem 2rem;
+    background: rgba(255, 255, 255, 0.05);
+    border: 2px solid rgba(255, 255, 255, 0.15);
+    border-radius: 4px;
     font-weight: 600;
     cursor: pointer;
-    transition: all 0.2s;
-    color: #374151;
+    transition: all 0.3s ease;
+    color: #fff;
+    font-size: 1rem;
 }
 
 .pagination-button:hover:not(:disabled) {
-    border-color: #667eea;
-    color: #667eea;
+    border-color: #e50914;
+    background: rgba(229, 9, 20, 0.1);
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(229, 9, 20, 0.3);
 }
 
 .pagination-button:disabled {
-    opacity: 0.5;
+    opacity: 0.3;
     cursor: not-allowed;
+    background: rgba(255, 255, 255, 0.02);
 }
 
 .pagination-info {
-    color: #6b7280;
-    font-weight: 500;
+    color: rgba(255, 255, 255, 0.7);
+    font-weight: 600;
+    font-size: 1.1rem;
+    min-width: 120px;
+    text-align: center;
 }
